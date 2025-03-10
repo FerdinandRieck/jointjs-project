@@ -1,0 +1,530 @@
+{
+  "id": "n0",
+  "layoutOptions": {
+    "algorithm.alg": "layered",
+    "edgeRouting": "ORTHOGONAL",
+    "spacing.nodeNodeBetweenLayers": 50,
+    "spacing.nodeNode": 20,
+    "spacing.edgeEdge": 20,
+    "spacing.edgeEdgeBetweenLayers": 20,
+    "elk.direction": "RIGHT"
+  },
+  "children": [
+    {
+      "id": "n1",
+      "label": "Vision Controller",
+      "layoutOptions": {
+        "portConstraints": "FREE",
+        "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+        "nodeSize.minimum": "(130, 20)"
+      },
+      "ports": [
+        { "id": "n1_p1", "width": 7, "height": 7, "layoutOptions": { "port.side": "NORTH" }, "color": "red" },
+        { "id": "n1_p2", "width": 7, "height": 7, "layoutOptions": { "port.side": "NORTH" }, "color": "blue" },
+        { "id": "n1_p3", "width": 7, "height": 7, "layoutOptions": { "port.side": "WEST" } },
+        { "id": "n1_p4", "width": 7, "height": 7, "layoutOptions": { "port.side": "EAST" } },
+        { "id": "n1_p5", "width": 7, "height": 7, "layoutOptions": { "port.side": "EAST" } },
+        { "id": "n1_p6", "width": 7, "height": 7, "layoutOptions": { "port.side": "EAST" } },
+        { "id": "n1_p7", "width": 7, "height": 7, "layoutOptions": { "port.side": "EAST" } }
+      ],
+      "children": [
+        {
+          "id": "n1.1",
+          "label": "inside VC",
+          "ports": [
+            { "id": "n1.1_p1", "width": 7, "height": 7, "layoutOptions": { "port.side": "WEST" } },
+            { "id": "n1.1_p2", "width": 7, "height": 7, "layoutOptions": { "port.side": "EAST" } }
+          ],
+          "layoutOptions": {
+            "portConstraints": "FREE",
+            "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+            "nodeSize.minimum": "(100, 20)"
+          },
+          "width": 50.0,
+          "height": 35.0
+        }
+      ],
+      "edges": [
+        {
+          "id": "e15",
+          "sources": [
+            "n1_p3"
+          ],
+          "targets": [
+            "n1.1_p1"
+          ]
+        },
+        {
+          "id": "e15",
+          "sources": [
+            "n1.1_p2"
+          ],
+          "targets": [
+            "n1_p4"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "label": "HMI",
+      "ports": [
+        {
+          "id": "n2_p1",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "NORTH"
+          },
+          "color": "red"
+        },
+        {
+          "id": "n2_p2",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "NORTH"
+          },
+          "color": "blue"
+        },
+        {
+          "id": "n2_p3",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "WEST"
+          }
+        },
+        {
+          "id": "n2_p4",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "EAST"
+          }
+        }
+      ],
+      "layoutOptions": {
+      "portConstraints": "FREE",
+      "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+      "nodeSize.minimum": "(130, 20)"
+      },
+      "width": 130.0,
+      "height": 75.0
+    },
+    {
+      "id": "n3",
+      "label": "Blinkerlampe_VR",
+      "ports": [
+        {
+          "id": "n3_p1",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "WEST"
+          }
+        },
+        {
+          "id": "n3_p2",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "NORTH"
+          },
+          "color": "blue"
+        }
+      ],
+            "layoutOptions": {
+        "portConstraints": "FREE",
+        "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+        "nodeSize.minimum": "(130, 20)"
+      },
+      "width": 130.0,
+      "height": 75.0
+    },
+    {
+      "id": "n4",
+      "label": "Blinkerlampe_VL",
+      "ports": [
+        {
+          "id": "n4_p1",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "WEST"
+          }
+        },
+        {
+          "id": "n4_p2",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "NORTH"
+          },
+          "color": "blue"
+        }
+      ],
+            "layoutOptions": {
+        "portConstraints": "FREE",
+        "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+        "nodeSize.minimum": "(130, 20)"
+      },
+      "width": 130.0,
+      "height": 75.0
+    },
+    {
+      "id": "n5",
+      "label": "Blinkerlampe_HR",
+      "ports": [
+        {
+          "id": "n5_p1",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "WEST"
+          }
+        },
+        {
+          "id": "n5_p2",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "NORTH"
+          },
+          "color": "blue"
+        }
+      ],
+            "layoutOptions": {
+        "portConstraints": "FREE",
+        "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+        "nodeSize.minimum": "(130, 20)"
+      },
+      "width": 130.0,
+      "height": 75.0
+    },
+    {
+      "id": "n6",
+      "label": "Blinkerlampe_HL",
+      "ports": [
+        {
+          "id": "n6_p1",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "WEST"
+          }
+        },
+        {
+          "id": "n6_p2",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "NORTH"
+          },
+          "color": "blue"
+        }
+      ],
+            "layoutOptions": {
+        "portConstraints": "FREE",
+        "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+        "nodeSize.minimum": "(130, 20)"
+      },
+      "width": 130.0,
+      "height": 75.0
+    },
+    {
+      "id": "n7",
+      "label": "Blinkerhebel",
+      "ports": [
+        {
+          "id": "n7_p1",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "EAST"
+          }
+        },
+        {
+          "id": "n7_p2",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "NORTH"
+          },
+          "color": "red"
+        },
+        {
+          "id": "n7_p3",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "NORTH"
+          },
+          "color": "blue"
+        }
+      ],
+            "layoutOptions": {
+        "portConstraints": "FREE",
+        "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+        "nodeSize.minimum": "(130, 20)"
+      },
+      "width": 130.0,
+      "height": 75.0
+    },
+    {
+      "id": "n8",
+      "label": "Batterie",
+      "ports": [
+        {
+          "id": "n8_p2",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "SOUTH"
+          },
+          "color": "blue"
+        },
+        {
+          "id": "n8_p1",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "SOUTH"
+          },
+          "color": "red"
+        }
+      ],
+        "layoutOptions": {
+        "portConstraints": "FREE",
+        "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+        "nodeSize.minimum": "(130, 20)"
+      },
+      "width": 130.0,
+      "height": 75.0
+    },
+    {
+      "id": "n9",
+      "label": "KL30",
+      "ports": [
+        {
+          "id": "n9_p1",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "SOUTH"
+          },
+          "color": "red"
+        },
+        {
+          "id": "n9_p2",
+          "width": 7,
+          "height": 7,
+          "layoutOptions": {
+            "port.side": "SOUTH"
+          },
+          "color": "red"
+        }
+      ],
+        "layoutOptions": {
+          "portConstraints": "FREE",
+          "nodeSize.constraints": "[PORTS MINIMUM_SIZE]",
+          "nodeSize.minimum": "(130, 20)"
+      },
+      "width": 130.0,
+      "height": 75.0
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "sources": [
+        "n2_p4"
+      ],
+      "targets": [
+        "n1_p3"
+      ],
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e1",
+      "sources": [
+        "n7_p1"
+      ],
+      "targets": [
+        "n2_p3"
+      ],
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e2",
+      "sources": [
+        "n1_p4"
+      ],
+      "targets": [
+        "n3_p1"
+      ],
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e3",
+      "sources": [
+        "n1_p5"
+      ],
+      "targets": [
+        "n4_p1"
+      ],
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e4",
+      "sources": [
+        "n1_p6"
+      ],
+      "targets": [
+        "n5_p1"
+      ],
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e5",
+      "sources": [
+        "n1_p7"
+      ],
+      "targets": [
+        "n6_p1"
+      ],
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e6",
+      "sources": [
+        "n9_p1"
+      ],
+      "targets": [
+        "n1_p1"
+      ],
+      "color": "red",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e7",
+      "sources": [
+        "n9_p1"
+      ],
+      "targets": [
+        "n2_p1"
+      ],
+      "color": "red",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e8",
+      "sources": [
+        "n9_p1"
+      ],
+      "targets": [
+        "n7_p2"
+      ],
+      "color": "red",
+      "layoutOptions": { 
+         
+      }
+    },
+    {
+      "id": "e9",
+      "sources": [
+        "n7_p3"
+      ],
+      "targets": [
+        "n8_p2"
+      ],
+      "color": "blue",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e10",
+      "sources": [
+        "n1_p2"
+      ],
+      "targets": [
+        "n8_p2"
+      ],
+      "color": "blue",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e11",
+      "sources": [
+        "n2_p2"
+      ],
+      "targets": [
+        "n8_p2"
+      ],
+      "color": "blue",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e12",
+      "sources": [
+        "n3_p2"
+      ],
+      "targets": [
+        "n8_p2"
+      ],
+      "color": "blue",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e13",
+      "sources": [
+        "n4_p2"
+      ],
+      "targets": [
+        "n8_p2"
+      ],
+      "color": "blue",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e14",
+      "sources": [
+        "n5_p2"
+      ],
+      "targets": [
+        "n8_p2"
+      ],
+      "color": "blue",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e15",
+      "sources": [
+        "n6_p2"
+      ],
+      "targets": [
+        "n8_p2"
+      ],
+      "color": "blue",
+      "layoutOptions": {  }
+    },
+    {
+      "id": "e16",
+      "sources": [
+        "n9_p2"
+      ],
+      "targets": [
+        "n8_p1"
+      ],
+      "color": "red"
+    },
+    {
+      "id": "e17",
+      "sources": [
+        "n1_p3"
+      ],
+      "targets": [
+        "n2_p4"
+      ]
+    }
+  ]
+}
