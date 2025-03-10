@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@joint/core": "^4.1.3",
-    "elkjs": "^0.9.3"
+    "elkjs": "^0.9.3",
+    "mermaid": "^11.4.1"
   }
 }
