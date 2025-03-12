@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid.js Sequence Diagram</title>
+    <script type="module" src="src/mermaid/mermaid.js" ></script>
+</head>
+<body>
+    <h2>Beispiel: Mermaid.js Sequenzdiagramm</h2>
+    <pre class="mermaid">
+        graph TD
+        A[Enter Chart Definition] --> B(Preview)
+        B --> C{decide}
+        C --> D[Keep]
+        C --> E[Edit Definition]
+        E --> B
+        D --> F[Save Image and Code]
+        F --> B
+    
+    </pre>
+</body>
+</html>
+

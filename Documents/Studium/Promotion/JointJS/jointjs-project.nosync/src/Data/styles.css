@@ -192,3 +192,27 @@ span {
     display: none; /* Versteckt, bis ein Element berührt wird */
     pointer-events: none; /* Tooltip beeinflusst nicht die Mausinteraktion */
 }
+
+/* dynamsche Linie */
+/* Flexbox-Container für Mermaid & JointJS */
+.diagram-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Style für Mermaid-Diagramm */
+#mermaid-container-1 {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Style für JointJS-Diagramm */
+#paper {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+}

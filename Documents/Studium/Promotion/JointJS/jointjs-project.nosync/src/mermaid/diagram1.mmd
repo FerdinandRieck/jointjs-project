@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant Blinkerhebel
+    participant HMI
+    participant Vision Controller
+    participant Lampen
+    Blinkerhebel->>HMI: Signal 1
+    HMI->>Vision Controller: Signal 2
+    Vision Controller->>Lampen: Signal 3
+    Vision Controller->>HMI: Signal 4

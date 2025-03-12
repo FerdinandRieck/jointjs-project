@@ -6,7 +6,7 @@ import { g, dia, shapes, util, highlighters } from '@joint/core';
 import { signalsData } from '../src/Data/signalsData';
 import { Child, Edge, Signal, JunctionPoint } from '../src/Data/shapes';
 import ELK from 'elkjs/lib/elk.bundled.js';
-import elkGraph from '../src/Data/graphData.json';
+import Graph from '../src/Data/graphData.json';
 
 const elk = new ELK();
 
@@ -225,7 +225,7 @@ const mapPortIdToShapeId = {};
 const signals = [];
 let signalLinks = [];
 
-elk.layout(elkGraph).then(res => {
+elk.layout(Graph).then(res => {
     const children = res.children || [];
     const edges = res.edges || [];
 

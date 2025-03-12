@@ -7,7 +7,7 @@ export const signalsData = {
         {
             'caseId': 'I16-075800',
             'eventId': '1',
-            'eventName': 'n7_p1|n2_p4',
+            'eventName': 'Signal 1',
             'source': 'n7_p1',
             'target': 'n2_p3',
             'start': 1452006000000,
@@ -17,7 +17,7 @@ export const signalsData = {
         {
             'caseId': 'I16-076500',
             'eventId': '2',
-            'eventName': 'n2_p|n1_p3',
+            'eventName': 'Signal 2',
             'source': 'n2_p4',
             'target': 'n1_p3',
             'start': 1455116400000,
@@ -27,7 +27,7 @@ export const signalsData = {
         {
             'caseId': 'I16-076600',
             'eventId': '3',
-            'eventName': 'D|E',
+            'eventName': 'Signal 3',
             'source': 'n1_p4',
             'target': 'n3_p1',
             'start': 1458226800000,
@@ -37,7 +37,7 @@ export const signalsData = {
         {
             'caseId': 'I16-076800',
             'eventId': '3',
-            'eventName': 'D|WW',
+            'eventName': 'Signal 3',
             'source': 'n1_p6',
             'target': 'n5_p1',
             'start': 1458226800000,
@@ -47,7 +47,7 @@ export const signalsData = {
         {
             'caseId': 'I16-076802',
             'eventId': '4',
-            'eventName': 'D|W',
+            'eventName': 'Signal 4',
             'source': 'n1_p3',
             'target': 'n2_p4',
             'start': 1461337200000,

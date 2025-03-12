@@ -5,9 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mermaid.js & JointJS</title>
     <link rel="stylesheet" type="text/css" href="src/Data/styles.css">
-    <script type="module" src="src/mermaid.js" defer></script>
+    <script type="module" src="src/mermaid/mermaid.js" defer></script>
     <script type="module" src="/src/main.js" defer></script>
+    <style>
+        /* Flexbox-Container für Mermaid & JointJS */
+        .diagram-container {
+            display: flex;  /* Setzt die Diagramme nebeneinander */
+            justify-content: space-between;  /* Abstand zwischen den Elementen */
+            align-items: flex-start;  /* Beide oben ausrichten */
+            gap: 20px;  /* Abstand zwischen den Diagrammen */
+            padding: 20px;
+        }
 
+        /* Style für Mermaid-Diagramm */
+        #mermaid-container {
+            flex: 1;  /* Mermaid nimmt 50% des Platzes */
+            min-width: 300px;
+        }
+
+        /* Style für JointJS-Diagramm */
+        #paper {
+            flex: 1;  /* JointJS nimmt 50% des Platzes */
+            min-width: 300px;
+            height: 400px;  /* Feste Höhe für besseres Layout */
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,7 +39,7 @@
     <!-- Flexbox-Container für die Diagramme -->
     <div class="diagram-container">
         <!-- Erstes Mermaid-Diagramm -->
-        <div id="mermaid-container-1" class="mermaid"></div>
+        <div id="mermaid-container" class="mermaid"></div>
 
         <!-- JointJS-Diagramm -->
         <div id="paper"></div>
