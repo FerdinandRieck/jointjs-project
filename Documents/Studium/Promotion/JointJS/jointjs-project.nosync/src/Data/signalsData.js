@@ -37,7 +37,7 @@ export const signalsData = {
         {
             'caseId': 'I16-076800',
             'eventId': '3',
-            'eventName': 'Signal 3',
+            'eventName': 'Signal 3.3',
             'source': 'n1_p6',
             'target': 'n5_p1',
             'start': 1458226800000,

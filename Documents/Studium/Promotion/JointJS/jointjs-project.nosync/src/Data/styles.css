@@ -193,7 +193,6 @@ span {
     pointer-events: none; /* Tooltip beeinflusst nicht die Mausinteraktion */
 }
 
-/* dynamsche Linie */
 /* Flexbox-Container für Mermaid & JointJS */
 .diagram-container {
     display: flex;
@@ -207,6 +206,7 @@ span {
 #mermaid-container-1 {
     flex: 1;
     min-width: 300px;
+    border: 1px solid #ccc;
 }
 
 /* Style für JointJS-Diagramm */

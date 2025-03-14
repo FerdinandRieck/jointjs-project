@@ -84,7 +84,7 @@ stopButton.addEventListener('click', () => {
 });
 
 
-// 🔥 **Vereinfachte Methode: Finde die Linie nach dem passenden Text**
+// Finde die Linie nach dem passenden Text
 function highlightArrowByText(signalName) {
     const allTexts = document.querySelectorAll(".mermaid svg text"); // Alle Texte im SVG finden
 

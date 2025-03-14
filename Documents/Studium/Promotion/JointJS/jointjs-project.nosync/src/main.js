@@ -2,7 +2,9 @@
 // Automatische Positionierung der Komponenten und Routing mit ELK.js
 // Signale werden mit Tokens-Beispieldemo dargestellt: https://www.jointjs.com/demos/tokens
 //---------------------------------------------------------------------------------------------------
-import { g, dia, shapes, util, highlighters } from '@joint/core';
+import React, { useRef, useEffect, useState } from "react";
+import { UncontrolledReactSVGPanZoom } from "react-svg-pan-zoom";
+import { g, dia, shapes, util, V } from '@joint/core';
 import { signalsData } from '../src/Data/signalsData';
 import { Child, Edge, Signal, JunctionPoint } from '../src/Data/shapes';
 import ELK from 'elkjs/lib/elk.bundled.js';
@@ -51,6 +53,7 @@ const paper = new dia.Paper({
         return !view.model.attributes.hidden;
     },
 });
+
 
 //----------- HTML-Input ----------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
@@ -160,8 +163,6 @@ paper.on('blank:pointerclick', function () {
     });
 });
 
-
-
 // Tooltip erstellen und zum Body hinzufügen
 // Tooltip-Element erstellen
 const tooltip = document.createElement("div");
@@ -205,7 +206,6 @@ paper.on("cell:mouseover", function (cellView, evt) {
     tooltip.style.display = "block";
 });
 
-
 // Tooltip ausblenden, wenn Maus das Element verlässt
 paper.on("cell:mouseout", function () {
     tooltip.style.display = "none";
@@ -216,6 +216,71 @@ document.addEventListener("mousemove", function (evt) {
     tooltip.style.left = evt.pageX + 10 + "px";
     tooltip.style.top = evt.pageY + 10 + "px";
 });
+
+
+//----------- Zoom & Pan  ---------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------
+
+let scale = 1;
+const zoomStep = 0.1;
+const minZoom = 0.2;
+const maxZoom = 4;
+let translate = { tx: 0, ty: 0 };
+let isPanning = false;
+let panStart = { x: 0, y: 0 };
+
+paper.el.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    
+    requestAnimationFrame(() => {
+        const rect = paper.el.getBoundingClientRect();
+        const offsetX = event.clientX - rect.left;
+        const offsetY = event.clientY - rect.top;
+        const previousScale = scale;
+        
+        scale += event.deltaY > 0 ? -zoomStep : zoomStep;
+        scale = Math.max(minZoom, Math.min(maxZoom, scale)); 
+        
+        translate.tx -= (offsetX - translate.tx) * (scale - previousScale) / previousScale;
+        translate.ty -= (offsetY - translate.ty) * (scale - previousScale) / previousScale;
+        
+        paper.scale(scale);
+        paper.translate(translate.tx, translate.ty);
+    });
+});
+
+
+paper.on('blank:pointerdown', function (event, x, y) {
+    isPanning = true;
+    panStart = { x: x * scale, y: y * scale};
+});
+
+paper.on('cell:pointerdown', function (cellView, event, x, y) {
+    isPanning = true;
+    panStart = { x: x * scale, y: y * scale};
+});
+
+paper.on('blank:pointermove', function (event, x, y) {
+    if (isPanning) {
+        translate.tx = event.offsetX - panStart.x
+        translate.ty = event.offsetY - panStart.y
+        paper.translate(translate.tx, translate.ty);
+    }
+});
+
+paper.on('cell:pointermove', function (cellView, event, x, y) {
+    if (isPanning) {
+        translate.tx = event.offsetX - panStart.x
+        translate.ty = event.offsetY - panStart.y
+        paper.translate(translate.tx, translate.ty);
+    }
+});
+
+
+paper.on('blank:pointerup cell:pointerup', function () {
+    isPanning = false;
+});
+
 
 
 //----------- main ----------------------------------------------------------------------------------
@@ -244,8 +309,6 @@ elk.layout(Graph).then(res => {
             paper.unfreeze();
         }
     });
-
-  //  
 });
 
 //----------- Functions -----------------------------------------------------------------------------
@@ -522,4 +585,6 @@ function setSignals() {
 
 //---------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------
+
+
 
